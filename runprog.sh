@@ -29,14 +29,14 @@ then
 fi
 if [ $# -eq 3 ]
 then
-	gcc lex.yy.c y.tab.c -lfl -o $3
-	./$3
+	gcc lex.yy.c y.tab.c -lfl -o "$3.out"
+	./"$3.out"
 else
 	gcc lex.yy.c y.tab.c -lfl
 	./a.out
 fi
 if [ $? != 0 ]
 then
-	echo 'Compilation error'
+	echo 'Compilation or runtime error'
 	exit 4
 fi
